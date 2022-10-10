@@ -15,6 +15,10 @@ export default class AddTodo extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addTodo(this.state)
+
+    this.setState({
+      content:''
+    })
   }
 
   render() {
@@ -25,7 +29,9 @@ export default class AddTodo extends Component {
 
           <div className="input-field s6">
           <label htmlFor="content">Add new todo:</label>
-            <input placeholder="Enter content" id="content" type="text" className="validate" onChange={this.handleChange} />
+            <input placeholder="Enter content" id="content" 
+            type="text" className="validate" 
+            onChange={this.handleChange} value={this.state.content} />
           </div>
           <button type='submit' className="waves-effect waves-light btn">button</button>
 
